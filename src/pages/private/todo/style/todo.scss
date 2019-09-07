@@ -1,0 +1,174 @@
+@import "../../../../styles/base/animation/fading_entrances/fadeIn.css";
+@import "../../../../styles/base/animation/attention_seekers/tada.css";
+@import "../../../../styles/base/border.scss";
+@import "../../../../styles/base/color.scss";
+@import "../../../../styles/base/palette.scss";
+@import "../../../../styles/base/padding.scss";
+@import "../../../../styles/base/background-color.scss";
+
+.todo {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  header,
+  article {
+    width: 700px;
+  }
+
+  header {
+    flex: 0 0 120px;
+    line-height: 120px;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.84);
+  }
+
+  article {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    .todo__input {
+      flex: 0 0 110px;
+      text-align: center;
+      position: relative;
+
+      img {
+        position: absolute;
+        top: 44px;
+        left: 22px;
+        cursor: pointer;
+      }
+
+      input {
+        height: 70px;
+        width: 100%;
+        margin: 20px 0;
+        padding: 0 20px 0 68px;
+        box-sizing: border-box;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: $border-component;
+      }
+    }
+    .todo__list {
+      background: $background-color-lv2;
+      min-height: 72px;
+      padding: $padding-inside-component;
+      overflow: auto;
+      border-radius: $border-component;
+
+      .todo__list__item {
+        padding: 5px 0px;
+        box-sizing: border-box;
+
+        .item__container {
+          min-height: 60px;
+          display: flex;
+          align-items: center;
+          background: $background-color-lv0;
+          border: $border-solid-1px;
+          position: relative;
+          .cbx-toggle {
+            padding: 0 10px;
+            flex: 0 0 57px;
+          }
+          .item__container_label {
+            flex: 1;
+          }
+          .item__container_label--done {
+            text-decoration: line-through;
+            color: $color-hint-text;
+            transition: color 1s;
+          }
+          button {
+            display: none;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 10px;
+            bottom: 0;
+            flex: 0 0 40px;
+            height: 40px;
+            width: 40px;
+            margin: auto 0;
+            font-size: 30px;
+            color: #d8401b;
+            margin-bottom: 11px;
+            transition: color 0.2s ease-out;
+            padding: 0;
+            border: 0;
+            background: none;
+
+            &:after {
+              content: "×";
+            }
+
+            &:hover {
+              background-color: rgb(216, 64, 27);
+              color: $primary-color-text;
+            }
+          }
+
+          &:hover {
+            button {
+              display: inline;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .todo__footer {
+    padding-top: $padding-inside-component;
+    flex: 0 0 70px;
+
+    .todo__footer__count {
+      width: 30%;
+      float: left;
+      color: $primary-color-text;
+      font-weight: 300;
+      font-size: 1.2rem;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    .todo__footer__actions {
+      width: 70%;
+      float: left;
+
+      .todo__footer__actions__item {
+        width: 100px;
+        background: rgba($background-color-lv0, 0.7);
+        float: left;
+        padding: $padding-inside-component;
+        border-radius: 4px;
+        margin-left: $padding-between-component;
+        text-align: center;
+        color: $color-hint-text;
+        cursor: pointer;
+      }
+
+      .todo__footer__actions__item--selected {
+        color: $primary-color-light;
+        font-weight: 500;
+        background: $background-color-lv0;
+      }
+    }
+  }
+
+  .author {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    color: $primary-color-text;
+    font-weight: 500;
+    font-style: italic;
+  }
+}
