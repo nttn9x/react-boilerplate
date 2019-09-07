@@ -4,15 +4,18 @@
   }
 }
 
+$height-appbar: 64px;
+
 .body {
   width: 100%;
-  height: 100%;
 }
 
 .body--has-login {
-  margin-top: 64px;
+  margin-top: $height-appbar;
+  height: calc(100% - $height-appbar);
 }
 
 .body--not-login {
   margin-top: 0;
+  height: 100%;
 }

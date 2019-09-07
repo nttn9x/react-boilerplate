@@ -1,18 +1,19 @@
 import React from "react";
 import PropTypes from "prop-types";
 import style from "./layout.module.scss";
-import { Link } from "react-router-dom";
 
 import AppBar from "../../ui-libraries/app-bar";
 import Toolbar from "../../ui-libraries/tool-bar";
-import IconButton from "../../ui-libraries/icon-button";
-import MenuIcon from "../../ui-libraries/icons/menu";
+import Typography from "../../ui-libraries/typography";
 
+import MenuComponent from "./layout-menu/layout-menu.component";
 import LanguageComponent from "../language/language.component";
 
 import { useGlobalStore } from "../../../store";
 
 import classnames from "classnames";
+
+import { useTranslation } from "react-i18next";
 
 const Layout: React.FC = ({ children }) => {
   const {
@@ -20,20 +21,16 @@ const Layout: React.FC = ({ children }) => {
       auth: { isAuth }
     }
   } = useGlobalStore();
-
+  const { t } = useTranslation(["common"]);
   return (
     <>
       {isAuth && (
         <AppBar>
           <Toolbar>
-            <IconButton edge="start" color="inherit" aria-label="menu">
-              <MenuIcon />
-            </IconButton>
-            <div className={style.header__title}>
-              <Link to="/">Todo</Link>|<Link to="/page2">Page 2</Link>|
-              <Link to="/login">login</Link>
-            </div>
-
+            <MenuComponent />
+            <Typography variant="h6" className={style.header__title}>
+              {t("app_name")}
+            </Typography>
             <LanguageComponent />
           </Toolbar>
         </AppBar>

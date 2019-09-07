@@ -7,6 +7,7 @@ i18n
     resources: {
       en: {
         common: {
+          app_name: "S-Product",
           items: "items",
           item: "item",
           title_app: "hello Nguyen",
@@ -20,9 +21,7 @@ i18n
             "Enter todo name here (Press key Enter to add more)"
         }
       },
-      vi: {
-       
-      }
+      vi: {}
     },
     lng: "en",
     fallbackLng: "en",
