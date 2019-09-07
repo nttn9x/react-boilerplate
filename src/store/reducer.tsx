@@ -1,12 +1,8 @@
 import * as authReducer from "./auth";
 
-import { IAuthState } from "./auth/auth.types";
+import { IState } from "./types";
 
 import { logger } from "./middlewares";
-
-interface IState {
-  auth: IAuthState;
-}
 
 export const initialState: IState = {
   auth: authReducer.initialState

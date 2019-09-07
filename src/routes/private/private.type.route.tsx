@@ -7,7 +7,7 @@ import { useGlobalStore } from "../../store";
 
 const withAuth = (Component: any) => (props: any) => {
   const { state } = useGlobalStore();
-  
+
   if (!state.auth.isAuth) {
     return (
       <Redirect
