@@ -10,7 +10,7 @@ import { IContextProps } from "./types";
 import { asyncer } from "./middlewares";
 import mainReducer, { initialState } from "./reducer";
 
-const GlobalStore = createContext({} as IContextProps);
+const GlobalStore = createContext({} as IContextProps<any, any>);
 
 export const useGlobalStore = () => useContext(GlobalStore);
 

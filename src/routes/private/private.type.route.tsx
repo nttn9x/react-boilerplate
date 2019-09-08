@@ -3,12 +3,12 @@ import { Route, Redirect } from "react-router-dom";
 
 import ListPublicRoutes from "./private.components.route";
 
-import { useGlobalStore } from "../../store";
+import { validAuth } from "../../utils/auth";
 
 const withAuth = (Component: any) => (props: any) => {
-  const { state } = useGlobalStore();
+  const isAuth = validAuth();
 
-  if (!state.auth.isAuth) {
+  if (!isAuth) {
     return (
       <Redirect
         to={{

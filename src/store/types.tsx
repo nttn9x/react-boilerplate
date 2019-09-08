@@ -1,3 +1,5 @@
+import { Dispatch } from "react";
+
 import { IAuthState } from "./auth/auth.types";
 
 export interface IState {
@@ -8,7 +10,7 @@ export interface INameToValueMap {
   [key: string]: any;
 }
 
-export interface IContextProps {
-  state: any;
-  dispatch: any;
+export interface IContextProps<S, T> {
+  state: S;
+  dispatch: Dispatch<T>;
 }

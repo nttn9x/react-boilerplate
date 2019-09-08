@@ -9,18 +9,14 @@ import Typography from "../../ui-libraries/typography";
 import MenuComponent from "./layout-menu/layout-menu.component";
 import LanguageComponent from "../language/language.component";
 
-import { useGlobalStore } from "../../../store";
+import { validAuth } from "../../../utils/auth";
 
 import classnames from "classnames";
 
 import { useTranslation } from "react-i18next";
 
 const Layout: React.FC = ({ children }) => {
-  const {
-    state: {
-      auth: { isAuth }
-    }
-  } = useGlobalStore();
+  const isAuth = validAuth();
   const { t } = useTranslation(["common"]);
   return (
     <>
