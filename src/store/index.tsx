@@ -18,7 +18,7 @@ export default function Provider({ children }: { children: React.ReactNode }) {
   const [state, dispatchBase] = useReducer(mainReducer, initialState);
 
   const dispatch = useCallback(asyncer(dispatchBase, state), []);
-
+  
   return (
     <GlobalStore.Provider value={{ state, dispatch }}>
       {children}

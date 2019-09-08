@@ -18,6 +18,7 @@ import { useTranslation } from "react-i18next";
 const Layout: React.FC = ({ children }) => {
   const isAuth = validAuth();
   const { t } = useTranslation(["common"]);
+
   return (
     <>
       {isAuth && (
