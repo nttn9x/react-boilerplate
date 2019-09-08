@@ -1,6 +1,6 @@
 import { Dispatch } from "react";
 
-import { IAuthState } from "./auth/auth.types";
+import { IAuthState } from "./auth/auth.type";
 
 export interface IState {
   auth: IAuthState;

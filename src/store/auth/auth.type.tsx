@@ -12,6 +12,6 @@ export interface IAuthAction {
 }
 
 export interface IAuthContext {
-  state?: any;
-  dispatch?: Dispatch<IAuthAction>;
+  state: any;
+  dispatch: Dispatch<IAuthAction>;
 }

@@ -1,6 +1,6 @@
 import produce from "immer";
 
-import { LOGIN, LOGOUT, IAuthState, IAuthAction } from "./auth.types";
+import { LOGIN, LOGOUT, IAuthState, IAuthAction } from "./auth.type";
 
 export const initialState: IAuthState = {
   isAuth: false

@@ -1,6 +1,6 @@
 import { createSelector } from "reselect";
 import { IState } from "../../../../store/types";
-import { IAuthState } from "../../../../store/auth/auth.types";
+import { IAuthState } from "../../../../store/auth/auth.type";
 
 const authSelector = (state: IState) => state.auth;
 
