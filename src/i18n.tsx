@@ -8,13 +8,10 @@ i18n
       en: {
         common: {
           app_name: "S-Product",
-          items: "items",
-          item: "item",
-          title_app: "hello Nguyen",
-          active: "Active",
-          completed: "Done",
-          all: "All",
-          delete: "Delete"
+          username: "Username",
+          password: "Password",
+          delete: "Delete",
+          this_field_is_required: "This field is required"
         },
         todo: {
           input_placeholder:

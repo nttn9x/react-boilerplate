@@ -12,7 +12,7 @@ $height-appbar: 64px;
 
 .body--has-login {
   margin-top: $height-appbar;
-  height: calc(100% - $height-appbar);
+  height: calc(100% - #{$height-appbar});
 }
 
 .body--not-login {
