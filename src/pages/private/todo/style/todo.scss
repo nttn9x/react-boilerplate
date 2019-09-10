@@ -1,10 +1,6 @@
 @import "../../../../styles/base/animation/fading_entrances/fadeIn.css";
 @import "../../../../styles/base/animation/attention_seekers/tada.css";
-@import "../../../../styles/base/border.scss";
-@import "../../../../styles/base/color.scss";
-@import "../../../../styles/base/palette.scss";
-@import "../../../../styles/base/padding.scss";
-@import "../../../../styles/base/background-color.scss";
+@import "../../../../styles/base/main";
 
 .todo {
   height: 100%;
@@ -59,7 +55,7 @@
     .todo__list {
       background: $background-color-lv2;
       min-height: 72px;
-      padding: $padding-inside-component;
+      padding: $gutter-component;
       overflow: auto;
       border-radius: $border-component;
 
@@ -72,7 +68,7 @@
           display: flex;
           align-items: center;
           background: $background-color-lv0;
-          border: $border-solid-1px;
+          border: $border-solid-1px; 
           position: relative;
           .cbx-toggle {
             padding: 0 10px;
@@ -126,7 +122,7 @@
   }
 
   .todo__footer {
-    padding-top: $padding-inside-component;
+    padding-top: $gutter-component;
     flex: 0 0 70px;
 
     .todo__footer__count {
@@ -147,9 +143,9 @@
         width: 100px;
         background: rgba($background-color-lv0, 0.7);
         float: left;
-        padding: $padding-inside-component;
+        padding: $gutter-component;
         border-radius: 4px;
-        margin-left: $padding-between-component;
+        margin-left: $gutter-component;
         text-align: center;
         color: $color-hint-text;
         cursor: pointer;

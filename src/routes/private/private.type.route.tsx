@@ -3,30 +3,37 @@ import { Route, Redirect } from "react-router-dom";
 
 import ListPublicRoutes from "./private.components.route";
 
+import LayoutComponent from "../../component/ui-own/layout/layout.component";
+
 import { validAuth } from "../../utils/auth";
 
-const withAuth = (Component: any) => (props: any) => {
-  const isAuth = validAuth();
-
-  if (!isAuth) {
-    return (
-      <Redirect
-        to={{
-          pathname: "/login"
-        }}
-      />
-    );
-  }
-
-  return <Component {...props} />;
-};
+const PrivateComponents: React.FC = props => (
+  <LayoutComponent>
+    {ListPublicRoutes.map(({ component, ...rest }: any, i) => (
+      <Route key={i} {...rest} {...props} component={component} />
+    ))}
+  </LayoutComponent>
+);
 
 const PrivateRoute: React.FC = () => (
-  <>
-    {ListPublicRoutes.map(({ component, ...rest }: any, i) => (
-      <Route key={i} {...rest} component={withAuth(component)} />
-    ))}
-  </>
+  <Route
+    path="/"
+    render={(props: any) => {
+      const isAuth = validAuth();
+
+      if (!isAuth) {
+        return (
+          <Redirect
+            to={{
+              pathname: "/login"
+            }}
+          />
+        );
+      }
+
+      return <PrivateComponents {...props} />;
+    }}
+  />
 );
 
 export default PrivateRoute;

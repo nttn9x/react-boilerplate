@@ -8,6 +8,7 @@ i18n
       en: {
         common: {
           app_name: "S-Product",
+          lets_go: "Let's Go",
           username: "Username",
           password: "Password",
           delete: "Delete",
