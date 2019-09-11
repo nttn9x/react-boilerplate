@@ -13,7 +13,7 @@ const LoginButton: React.SFC<ILoginButtonProps> = React.memo(
         variant="extended"
         size="medium"
         color="primary"
-        aria-label="add"
+        aria-label="Login"
         type="submit"
       >
         {label}

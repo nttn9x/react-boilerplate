@@ -11,16 +11,16 @@ import AuthProvider from "../context/auth.context";
 
 const Root: React.FC = () => {
   return (
-    <AuthProvider>
-      <Router>
-        <LayoutComponent>
-          <Suspense fallback={<LoadingComponent />}>
+    <Suspense fallback={<LoadingComponent />}>
+      <AuthProvider>
+        <Router>
+          <LayoutComponent>
             <PublicTypeRoute />
             <PrivateTypeRoute />
-          </Suspense>
-        </LayoutComponent>
-      </Router>
-    </AuthProvider>
+          </LayoutComponent>
+        </Router>
+      </AuthProvider>
+    </Suspense>
   );
 };
 

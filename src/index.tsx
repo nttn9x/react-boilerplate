@@ -7,7 +7,6 @@ import ReactDOM from "react-dom";
 import Route from "./routes/index.route";
 
 import Provider from "./store";
-import WebFont from "webfontloader";
 
 import * as serviceWorker from "./serviceWorker";
 
@@ -27,18 +26,8 @@ function generateUI(): void {
   );
 }
 
-function loadFont(): void {
-  WebFont.load({
-    google: {
-      families: ["Roboto:300,400,500", "Material+Icons"]
-    }
-  });
-}
-
 function createMagic() {
   generateUI();
-
-  loadFont();
 
   // If you want your app to work offline and load faster, you can change
   // unregister() to register() below. Note this comes with some pitfalls.

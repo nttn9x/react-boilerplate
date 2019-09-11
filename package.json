@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.4.0",
+    "@material-ui/icons": "^4.4.1",
     "@types/yup": "^0.26.23",
     "axios": "^0.19.0",
     "classnames": "^2.2.6",
@@ -19,7 +20,6 @@
     "react-scripts": "3.1.1",
     "reselect": "^4.0.0",
     "typescript": "3.6.2",
-    "webfontloader": "^1.6.28",
     "yup": "^0.27.0"
   },
   "scripts": {

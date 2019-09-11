@@ -6,6 +6,10 @@ import FormHelperText from "../../../component/ui-libraries/form-helper-text";
 import Input from "../../../component/ui-libraries/input";
 import IconButton from "../../../component/ui-libraries/icon-button";
 import InputAdornment from "../../../component/ui-libraries/input-adornment";
+import PermIdentityIcon from "../../../component/ui-libraries/icons/perm-identity";
+import LockOpenIcon from "../../../component/ui-libraries/icons/lock-open";
+import VisibilityIcon from "../../../component/ui-libraries/icons/visibility";
+import VisibilityOffIcon from "../../../component/ui-libraries/icons/visibility-off";
 
 interface ILoginFormProps {
   values: any;
@@ -48,12 +52,15 @@ const LoginForm: React.FC<ILoginFormProps> = ({
           autoComplete="new-password"
           value={values.username}
           name="username"
+          inputProps={{
+            "aria-label": "username"
+          }}
           onBlur={handleBlur}
           onChange={handleChange}
           placeholder={t(`username`)}
           startAdornment={
-            <InputAdornment position="start">
-              <i className="material-icons">perm_identity</i>
+            <InputAdornment aria-label="User Name Icon" position="start">
+              <PermIdentityIcon />
             </InputAdornment>
           }
         />
@@ -70,24 +77,26 @@ const LoginForm: React.FC<ILoginFormProps> = ({
           value={values.password}
           autoComplete="new-password"
           name="password"
+          inputProps={{
+            "aria-label": "password"
+          }}
           onBlur={handleBlur}
           type={showPassword ? "text" : "password"}
           onChange={handleChange}
           startAdornment={
-            <InputAdornment position="start">
-              <i className="material-icons">lock_open</i>
+            <InputAdornment aria-label="Password Icon" position="start">
+              <LockOpenIcon />
             </InputAdornment>
           }
           endAdornment={
             <InputAdornment position="end">
               <IconButton
+                aria-label="Change Type Password"
                 edge="end"
                 onClick={handleClickShowPassword}
                 onMouseDown={handleMouseDownPassword}
               >
-                <i className="material-icons">
-                  {showPassword ? "visibility" : "visibility_off"}
-                </i>
+                {showPassword ? <VisibilityIcon /> : <VisibilityOffIcon />}
               </IconButton>
             </InputAdornment>
           }
