@@ -12,22 +12,27 @@ import { useTranslation } from "react-i18next";
 
 interface IProps {
   isAuth: boolean;
+  onLogout: Function;
 }
 
-const LayoutHeader: React.FC<IProps> = ({ isAuth }) => {
+const LayoutHeader: React.FC<IProps> = ({ isAuth, onLogout }) => {
   const { t } = useTranslation(["common"]);
 
   if (!isAuth) {
     return null;
   }
+
   return (
-    <AppBar>
+    <AppBar classes={{ root: style.header }}>
       <Toolbar>
         <MenuComponent />
         <Typography variant="h6" className={style.header__title}>
           {t("app_name")}
         </Typography>
-        <UserSettingsComponent />
+        <UserSettingsComponent
+          classes={{ avatar: style.header__settings }}
+          onLogout={onLogout}
+        />
       </Toolbar>
     </AppBar>
   );

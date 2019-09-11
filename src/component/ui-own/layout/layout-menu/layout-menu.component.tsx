@@ -6,7 +6,7 @@ import Menu from "../../../ui-libraries/menu";
 import MenuItem from "../../../ui-libraries/menu-item";
 import MenuIcon from "../../../ui-libraries/icons/menu";
 
-const LayoutMenu: React.FC = ({ children }) => {
+const LayoutMenu: React.FC = () => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   function handleClick(event: React.MouseEvent<HTMLElement>) {

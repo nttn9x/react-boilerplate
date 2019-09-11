@@ -3,37 +3,29 @@ import { Route, Redirect } from "react-router-dom";
 
 import ListPublicRoutes from "./private.components.route";
 
-import LayoutComponent from "../../component/ui-own/layout/layout.component";
+import { useAuthDataContext } from "../../context/auth.context";
 
-import { validAuth } from "../../utils/auth";
+const withAuth = (Component: any) => (props: any) => {
+  const { isAuth } = useAuthDataContext();
 
-const PrivateComponents: React.FC = props => (
-  <LayoutComponent>
+  if (!isAuth) {
+    return (
+      <Redirect
+        to={{
+          pathname: "/login"
+        }}
+      />
+    );
+  }
+  return <Component {...props} />;
+};
+
+const PrivateRoute: React.FC = props => (
+  <>
     {ListPublicRoutes.map(({ component, ...rest }: any, i) => (
-      <Route key={i} {...rest} {...props} component={component} />
+      <Route key={i} {...rest} {...props} component={withAuth(component)} />
     ))}
-  </LayoutComponent>
-);
-
-const PrivateRoute: React.FC = () => (
-  <Route
-    path="/"
-    render={(props: any) => {
-      const isAuth = validAuth();
-
-      if (!isAuth) {
-        return (
-          <Redirect
-            to={{
-              pathname: "/login"
-            }}
-          />
-        );
-      }
-
-      return <PrivateComponents {...props} />;
-    }}
-  />
+  </>
 );
 
 export default PrivateRoute;

@@ -1,15 +1,10 @@
-import { useGlobalStore } from "../../../../store";
-import { actions } from "../../../../store/auth";
-
-import { isAuthSelector } from "./login.selector";
+import { useAuthDataContext } from "../../../../context/auth.context";
 
 export function useOwnRedux(history: any) {
-  const { state, dispatch } = useGlobalStore();
-
-  const isAuth = isAuthSelector(state);
+  const { isAuth, onLogin } = useAuthDataContext();
 
   function handleLogin(username: string) {
-    dispatch(actions.doLogin(username));
+    onLogin({ username });
 
     history.push("/");
   }

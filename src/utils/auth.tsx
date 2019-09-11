@@ -1,9 +1,17 @@
-export function validAuth() {
-  const token = localStorage.getItem("app_key_s");
+const KEY = "app_key_s";
 
-  if (token) {
-    return true;
+export function getUser() {
+  try {
+    return localStorage.getItem(KEY);
+  } catch (error) {
+    return null;
   }
+}
 
-  return false;
+export function setUser(user: any) {
+  localStorage.setItem(KEY, JSON.stringify(user));
+}
+
+export function removeUser() {
+  localStorage.removeItem(KEY);
 }

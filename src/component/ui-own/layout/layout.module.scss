@@ -1,6 +1,13 @@
 .header {
+  background-color: #212121 !important;
+
   &__title {
     flex-grow: 1;
+  }
+
+  &__settings {
+    width: 30px !important;
+    height: 30px !important;
   }
 }
 

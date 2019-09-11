@@ -1,20 +1,20 @@
-import * as authReducer from "./auth";
+// import * as authReducer from "./auth";
 
 import { IState } from "./types";
 
 import { logger } from "./middlewares";
 
 export const initialState: IState = {
-  auth: authReducer.initialState
+  // auth: authReducer.initialState
 };
 
 export default function mainReducer(state: IState, action: any) {
   // Receiving previous state here
-  const { auth } = state;
+  // const { auth } = state;
 
   // Receiving current state here
   const currentState = {
-    auth: authReducer.reducer(auth, action)
+    // auth: authReducer.reducer(auth, action)
   };
 
   // Middlewares
