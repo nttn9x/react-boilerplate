@@ -5,6 +5,10 @@
   background-color: #212121 !important;
   @include animated(fadeInDown);
 
+  &--stop {
+    animation-name: unset;
+  }
+
   &__title {
     flex-grow: 1;
   }

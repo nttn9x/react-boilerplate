@@ -15,7 +15,7 @@ interface IProps {
   onLogout: Function;
 }
 
-const LayoutHeader: React.FC<IProps> = ({ isAuth, onLogout }) => {
+const LayoutHeader: React.SFC<IProps> = ({ isAuth, onLogout }) => {
   const { t } = useTranslation(["common"]);
 
   if (!isAuth) {
@@ -23,7 +23,7 @@ const LayoutHeader: React.FC<IProps> = ({ isAuth, onLogout }) => {
   }
 
   return (
-    <AppBar classes={{ root: `${style.header} animated fadeInDown slow`}}>
+    <AppBar id="a-h-t" classes={{ root: style.header }}>
       <Toolbar>
         <MenuComponent />
         <Typography variant="h6" className={style.header__title}>

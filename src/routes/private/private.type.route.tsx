@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 
-import ListPublicRoutes from "./private.components.route";
+import Routes from "./private.components.route";
 
 import { useAuthDataContext } from "../../context/auth.context";
 
@@ -20,10 +20,10 @@ const withAuth = (Component: any) => (props: any) => {
   return <Component {...props} />;
 };
 
-const PrivateRoute: React.FC = props => (
+const PrivateRoute: React.SFC = () => (
   <>
-    {ListPublicRoutes.map(({ component, ...rest }: any, i) => (
-      <Route key={i} {...rest} {...props} component={withAuth(component)} />
+    {Routes.map(({ component, ...rest }: any, i) => (
+      <Route key={`key_r_p_${i}`} {...rest} component={withAuth(component)} />
     ))}
   </>
 );

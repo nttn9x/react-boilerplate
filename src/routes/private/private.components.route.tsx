@@ -5,6 +5,9 @@ const Todo = lazy(() =>
   import("../../pages/private/todo/container/todo.container")
 );
 const Page2 = lazy(() => import("../../pages/private/page2/page2.container"));
+const Settings = lazy(() =>
+  import("../../pages/private/settings/settings.container")
+);
 
 const routes: RouteProps[] = [
   {
@@ -16,6 +19,11 @@ const routes: RouteProps[] = [
     exact: true,
     path: "/page2",
     component: Page2
+  },
+  {
+    exact: true,
+    path: "/settings",
+    component: Settings
   }
 ];
 

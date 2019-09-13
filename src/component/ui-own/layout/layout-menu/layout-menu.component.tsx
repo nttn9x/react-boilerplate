@@ -39,6 +39,9 @@ const LayoutMenu: React.FC = () => {
         <Link to="/page2">
           <MenuItem>page2</MenuItem>
         </Link>
+        <Link to="/settings">
+          <MenuItem>settings</MenuItem>
+        </Link>
       </Menu>
     </>
   );
