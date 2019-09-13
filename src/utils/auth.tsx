@@ -1,6 +1,17 @@
 const KEY = "app_key_s";
 
-export function getUser() {
+export function islogin(): boolean {
+  try {
+    const jwt = localStorage.getItem(KEY);
+    // TODO: not done
+    if (jwt) {
+      return true;
+    }
+  } catch (error) {}
+  return false;
+}
+
+export function getUser(): any {
   try {
     return localStorage.getItem(KEY);
   } catch (error) {
@@ -9,7 +20,7 @@ export function getUser() {
 }
 
 export function setUser(user: any) {
-  localStorage.setItem(KEY, JSON.stringify(user));
+  localStorage.setItem(KEY, JSON.stringify(user)); 
 }
 
 export function removeUser() {

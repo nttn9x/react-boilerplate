@@ -1,14 +1,12 @@
 import React, {
   createContext,
   useState,
-  useEffect,
   useContext,
   useMemo,
   useCallback
 } from "react";
 
-import { getUser } from "../utils/auth";
-import { setUser, removeUser } from "../utils/auth";
+import { setUser, removeUser, getUser } from "../utils/auth";
 
 interface IAuthContext {
   isAuth: boolean;
@@ -25,18 +23,12 @@ export const AuthDataContext = createContext<IAuthContext>({
 });
 
 const AuthDataProvider = (props: any) => {
-  const [authData, setAuthData] = useState(null);
+  const [authData, setAuthData] = useState(getUser());
 
   /* The first time the component is rendered, it tries to
    * fetch the auth data from a source, like a cookie or
    * the localStorage.
    */
-  useEffect(() => {
-    const user: any = getUser();
-    if (user) {
-      setAuthData(user);
-    }
-  }, []);
 
   const isAuth: boolean = useMemo(() => (authData ? true : false), [authData]);
   const onLogin = useCallback((user: any) => {
