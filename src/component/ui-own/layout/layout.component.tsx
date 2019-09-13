@@ -29,7 +29,7 @@ const Layout: React.FC = ({ children }) => {
       }),
     [isAuth]
   );
-
+ 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

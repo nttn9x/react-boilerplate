@@ -7,9 +7,10 @@ import Avatar from "../../ui-libraries/avatar";
 import Popover from "../../ui-libraries/popover";
 import Menu from "../../ui-libraries/menu";
 import MenuItem from "../../ui-libraries/menu-item";
-import Icon from "../../ui-libraries/icon";
 import ListItemIcon from "../../ui-libraries/list-item-icon";
 import Typography from "../../ui-libraries/typography";
+
+import ExitToAppIcon from "../../ui-libraries/icons/exit-to-app";
 
 import { useTranslation } from "react-i18next";
 
@@ -37,7 +38,9 @@ const UserSettings: React.FC<IUserSettingsProps> = ({ classes, onLogout }) => {
 
   function handleClose() {
     setAnchorEl(null);
+  }
 
+  function doLogout() {
     onLogout();
   }
 
@@ -66,9 +69,9 @@ const UserSettings: React.FC<IUserSettingsProps> = ({ classes, onLogout }) => {
           open={Boolean(anchorEl)}
           onClose={handleClose}
         >
-          <MenuItem onClick={handleClose}>
+          <MenuItem onClick={doLogout}>
             <ListItemIcon>
-              <Icon>exit_to_app</Icon>
+              <ExitToAppIcon />
             </ListItemIcon>
             <Typography variant="inherit"> {t("sign_out")}</Typography>
           </MenuItem>

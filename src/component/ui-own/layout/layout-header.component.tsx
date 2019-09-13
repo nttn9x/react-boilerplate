@@ -23,7 +23,7 @@ const LayoutHeader: React.FC<IProps> = ({ isAuth, onLogout }) => {
   }
 
   return (
-    <AppBar classes={{ root: style.header }}>
+    <AppBar classes={{ root: `${style.header} animated fadeInDown slow`}}>
       <Toolbar>
         <MenuComponent />
         <Typography variant="h6" className={style.header__title}>

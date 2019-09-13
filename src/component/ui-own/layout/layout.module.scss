@@ -1,5 +1,9 @@
+@import "../../../styles/base/mixins.scss";
+@import "../../../styles/base/animation/fading_entrances/fadeInDown.scss";
+
 .header {
   background-color: #212121 !important;
+  @include animated(fadeInDown);
 
   &__title {
     flex-grow: 1;
