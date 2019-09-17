@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/private/orders/orders.container.tsx"],"names":["Page2"],"mappings":"kIAAA,2BAMeA,UAJS,WACtB,OAAO","file":"static/js/8.2e1e2829.chunk.js","sourcesContent":["import React from \"react\";\n\nconst Page2: React.FC = () => {\n  return <div>Page2</div>;\n};\n\nexport default Page2;\n"],"sourceRoot":""}

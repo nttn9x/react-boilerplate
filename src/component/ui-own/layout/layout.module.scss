@@ -4,8 +4,9 @@
 @import "../../../styles/base/animation/fading_entrances/fadeInDown.scss";
 
 .header {
-  background: linear-gradient(90deg, $primary-color-dark, $primary-color-light) !important;
+  background: $background-color-lv0 !important;
   box-shadow: none !important;
+  color: #5a5a5a !important;
   @include animated(fadeInDown);
 
   &--stop {

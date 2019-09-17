@@ -1,17 +1,14 @@
 import { lazy } from "react";
 import { RouteProps } from "react-router-dom";
 
-import { ROUTES } from "../../constaints/navigation";
+import { ROUTES } from "../../constants/navigation";
 
-const Orders = lazy(() =>
-  import("../../pages/private/orders/orders.container")
+const Fields = lazy(() =>
+  import("../../pages/private/fields/fields.container")
 );
-const Customers = lazy(() =>
-  import("../../pages/private/customers/customers.container")
-);
-const Offers = lazy(() =>
-  import("../../pages/private/offers/offers.container")
-);
+
+const Users = lazy(() => import("../../pages/private/users/users.container"));
+
 const Dashboard = lazy(() =>
   import("../../pages/private/dashboard/dashboard.container")
 );
@@ -24,18 +21,13 @@ const routes: RouteProps[] = [
   },
   {
     exact: true,
-    path: ROUTES.Customers,
-    component: Customers
+    path: ROUTES.Fields,
+    component: Fields
   },
   {
     exact: true,
-    path: ROUTES.Orders,
-    component: Orders
-  },
-  {
-    exact: true,
-    path: ROUTES.Offers,
-    component: Offers
+    path: ROUTES.Users,
+    component: Users
   }
 ];
 

@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import { useServiceContext } from "../../../context/service.context";
 
 const Page2: React.FC = () => {
-  return <div>Page2</div>;
+  const { apiGet } = useServiceContext();
+
+  useEffect(() => {
+    apiGet();
+  }, [apiGet]);
+  return <div>dashboard</div>;
 };
 
 export default Page2;

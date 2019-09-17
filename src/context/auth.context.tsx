@@ -6,7 +6,7 @@ import React, {
   useCallback
 } from "react";
 
-import { setUser, removeUser, getUser } from "../utils/auth";
+import { setToken, removeToken, getUser } from "../utils/auth";
 
 interface IAuthContext {
   isAuth: boolean;
@@ -33,12 +33,12 @@ const AuthDataProvider = (props: any) => {
   const isAuth: boolean = useMemo(() => (authData ? true : false), [authData]);
   const onLogin = useCallback((user: any) => {
     setAuthData(user);
-    setUser(user);
+    setToken(user);
   }, []);
 
   const onLogout = useCallback(() => {
     setAuthData(null);
-    removeUser();
+    removeToken();
   }, []);
 
   return (

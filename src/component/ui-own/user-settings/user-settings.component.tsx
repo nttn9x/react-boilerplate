@@ -1,6 +1,6 @@
 import React from "react";
 
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 import IconButton from "../../ui-libraries/icon-button";
 import Avatar from "../../ui-libraries/avatar";
@@ -19,11 +19,16 @@ interface IUserSettingsProps {
   onLogout: Function;
 }
 
-const useStyles = makeStyles({
-  root: {
-    width: 300
-  }
-});
+const useStyles = makeStyles((theme: Theme) =>
+  createStyles({
+    root: {
+      width: 300
+    },
+    avatar: {
+      background: theme.palette.primary.main
+    }
+  })
+);
 
 const UserSettings: React.FC<IUserSettingsProps> = ({ classes, onLogout }) => {
   const classeOwns = useStyles();
@@ -47,7 +52,7 @@ const UserSettings: React.FC<IUserSettingsProps> = ({ classes, onLogout }) => {
   return (
     <>
       <IconButton onClick={handleClick}>
-        <Avatar className={classes.avatar}>H</Avatar>
+        <Avatar className={`${classes.avatar} ${classeOwns.avatar}`}>H</Avatar>
       </IconButton>
       <Popover
         open={Boolean(anchorEl)}

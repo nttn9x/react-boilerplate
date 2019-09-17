@@ -1,13 +1,8 @@
-import React, { useMemo } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import style from "./layout.module.scss";
 
-import { createMuiTheme } from "@material-ui/core/styles";
-import { ThemeProvider } from "@material-ui/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
-
-import primaryColor from "@material-ui/core/colors/deepPurple";
-import secondaryColor from "@material-ui/core/colors/blue";
 
 import LayoutHeaderComponent from "./layout-header.component";
 
@@ -18,19 +13,8 @@ import classnames from "classnames";
 const Layout: React.FC = ({ children }) => {
   const { isAuth, onLogout } = useAuthDataContext();
 
-  const theme = useMemo(
-    () =>
-      createMuiTheme({
-        palette: {
-          primary: primaryColor,
-          secondary: secondaryColor
-        }
-      }),
-    []
-  );
-
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <CssBaseline />
       <LayoutHeaderComponent isAuth={isAuth} onLogout={onLogout} />
       <div
@@ -41,7 +25,7 @@ const Layout: React.FC = ({ children }) => {
       >
         {children}
       </div>
-    </ThemeProvider>
+    </>
   );
 };
 

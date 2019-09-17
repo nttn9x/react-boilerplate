@@ -16,9 +16,8 @@ i18n
           delete: "Delete",
           this_field_is_required: "This field is required",
           dashboard: "Dashboard",
-          orders: "Orders",
-          customers: "Customers",
-          offers: "Offers"
+          users: "Users",
+          fields: "Fields"
         },
         todo: {
           input_placeholder:

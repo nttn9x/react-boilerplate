@@ -1,0 +1,2 @@
+(window["webpackJsonpreact-boilerplate"]=window["webpackJsonpreact-boilerplate"]||[]).push([[7],{790:function(e,n,t){"use strict";t.r(n);var a=t(0),r=t.n(a);n.default=function(){return r.a.createElement("div",null,"Page2")}}}]);
+//# sourceMappingURL=7.4bbfcfa0.chunk.js.map

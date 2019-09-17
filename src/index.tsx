@@ -8,6 +8,8 @@ import Route from "./routes/index.route";
 
 import Provider from "./store";
 
+import { setUpApi } from "./utils/http-interceptors/request";
+
 import * as serviceWorker from "./serviceWorker";
 
 import "./i18n";
@@ -27,6 +29,8 @@ function generateUI(): void {
 }
 
 function createMagic() {
+  setUpApi();
+
   generateUI();
 
   // If you want your app to work offline and load faster, you can change

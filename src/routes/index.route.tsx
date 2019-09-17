@@ -8,19 +8,28 @@ import LoadingComponent from "../component/ui-own/progress/loader/loader.compone
 import LayoutComponent from "../component/ui-own/layout/layout.component";
 
 import AuthProvider from "../context/auth.context";
+import ThemeProvider from "../context/theme.context";
+import { SnackbarProvider } from "notistack";
+import ServiceProvider from "../context/service.context";
 
 const Root: React.FC = () => {
   return (
-    <AuthProvider>
-      <Router>
-        <LayoutComponent>
-          <Suspense fallback={<LoadingComponent />}>
-            <PublicTypeRoute />
-            <PrivateTypeRoute />
-          </Suspense>
-        </LayoutComponent>
-      </Router>
-    </AuthProvider>
+    <Router>
+      <AuthProvider>
+        <ThemeProvider>
+          <SnackbarProvider>
+            <ServiceProvider>
+              <LayoutComponent>
+                <Suspense fallback={<LoadingComponent />}>
+                  <PublicTypeRoute />
+                  <PrivateTypeRoute />
+                </Suspense>
+              </LayoutComponent>
+            </ServiceProvider>
+          </SnackbarProvider>
+        </ThemeProvider>
+      </AuthProvider>
+    </Router>
   );
 };
 
