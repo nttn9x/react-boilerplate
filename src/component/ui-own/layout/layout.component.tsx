@@ -22,14 +22,13 @@ const Layout: React.FC = ({ children }) => {
     () =>
       createMuiTheme({
         palette: {
-          type: isAuth ? "dark" : "light",
           primary: primaryColor,
           secondary: secondaryColor
         }
       }),
-    [isAuth]
+    []
   );
- 
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

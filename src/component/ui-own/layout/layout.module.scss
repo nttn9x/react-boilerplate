@@ -1,8 +1,11 @@
+@import "../../../styles/base/palette.scss";
+@import "../../../styles/base/background-color.scss";
 @import "../../../styles/base/mixins.scss";
 @import "../../../styles/base/animation/fading_entrances/fadeInDown.scss";
 
 .header {
-  background-color: #212121 !important;
+  background: linear-gradient(90deg, $primary-color-dark, $primary-color-light) !important;
+  box-shadow: none !important;
   @include animated(fadeInDown);
 
   &--stop {

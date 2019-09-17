@@ -14,7 +14,11 @@ i18n
           username: "Username",
           password: "Password",
           delete: "Delete",
-          this_field_is_required: "This field is required"
+          this_field_is_required: "This field is required",
+          dashboard: "Dashboard",
+          orders: "Orders",
+          customers: "Customers",
+          offers: "Offers"
         },
         todo: {
           input_placeholder:

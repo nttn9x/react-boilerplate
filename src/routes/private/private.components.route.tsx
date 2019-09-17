@@ -1,29 +1,41 @@
 import { lazy } from "react";
 import { RouteProps } from "react-router-dom";
 
-const Todo = lazy(() =>
-  import("../../pages/private/todo/container/todo.container")
+import { ROUTES } from "../../constaints/navigation";
+
+const Orders = lazy(() =>
+  import("../../pages/private/orders/orders.container")
 );
-const Page2 = lazy(() => import("../../pages/private/page2/page2.container"));
-const Settings = lazy(() =>
-  import("../../pages/private/settings/settings.container")
+const Customers = lazy(() =>
+  import("../../pages/private/customers/customers.container")
+);
+const Offers = lazy(() =>
+  import("../../pages/private/offers/offers.container")
+);
+const Dashboard = lazy(() =>
+  import("../../pages/private/dashboard/dashboard.container")
 );
 
 const routes: RouteProps[] = [
   {
     exact: true,
-    path: "/",
-    component: Todo
+    path: ROUTES.Dashboard,
+    component: Dashboard
   },
   {
     exact: true,
-    path: "/page2",
-    component: Page2
+    path: ROUTES.Customers,
+    component: Customers
   },
   {
     exact: true,
-    path: "/settings",
-    component: Settings
+    path: ROUTES.Orders,
+    component: Orders
+  },
+  {
+    exact: true,
+    path: ROUTES.Offers,
+    component: Offers
   }
 ];
 

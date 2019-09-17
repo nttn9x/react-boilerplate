@@ -6,7 +6,12 @@ import Menu from "../../../ui-libraries/menu";
 import MenuItem from "../../../ui-libraries/menu-item";
 import MenuIcon from "../../../ui-libraries/icons/menu";
 
+import { SIDE_BAR } from "../../../../constaints/navigation";
+
+import { useTranslation } from "react-i18next";
+
 const LayoutMenu: React.FC = () => {
+  const { t } = useTranslation(["common"]);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   function handleClick(event: React.MouseEvent<HTMLElement>) {
@@ -33,15 +38,11 @@ const LayoutMenu: React.FC = () => {
         open={Boolean(anchorEl)}
         onClose={handleClose}
       >
-        <Link to="/">
-          <MenuItem>Todo</MenuItem>
-        </Link>
-        <Link to="/page2">
-          <MenuItem>page2</MenuItem>
-        </Link>
-        <Link to="/settings">
-          <MenuItem>settings</MenuItem>
-        </Link>
+        {SIDE_BAR.map((e, i) => (
+          <Link key={`lm-n-${i}`} to={e.linkTo}>
+            <MenuItem>{t(e.keyi18n)}</MenuItem>
+          </Link>
+        ))}
       </Menu>
     </>
   );

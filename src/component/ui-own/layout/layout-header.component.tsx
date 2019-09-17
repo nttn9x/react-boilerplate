@@ -25,7 +25,7 @@ const LayoutHeader: React.SFC<IProps> = ({ isAuth, onLogout }) => {
   return (
     <AppBar id="a-h-t" classes={{ root: style.header }}>
       <Toolbar>
-        <MenuComponent />
+        <MenuComponent /> 
         <Typography variant="h6" className={style.header__title}>
           {t("app_name")}
         </Typography>
