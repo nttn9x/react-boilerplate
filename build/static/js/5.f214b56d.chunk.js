@@ -1,0 +1,2 @@
+(window.webpackJsonpjaibu=window.webpackJsonpjaibu||[]).push([[5],{850:function(e,n,t){"use strict";t.r(n);var a=t(0),u=t.n(a),c=t(265);n.default=function(){var e=Object(c.b)().apiGet;return Object(a.useEffect)(function(){e()},[e]),u.a.createElement("div",null,"dashboard")}}}]);
+//# sourceMappingURL=5.f214b56d.chunk.js.map

@@ -7,7 +7,7 @@ i18n
     resources: {
       en: {
         common: {
-          app_name: "S-Product",
+          app_name: "Jaibu",
           lets_go: "Let's Go",
           sign_in: "SIGN IN",
           sign_out: "Sign out",

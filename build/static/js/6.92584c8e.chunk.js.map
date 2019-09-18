@@ -1,1 +1,0 @@
-{"version":3,"sources":["pages/private/dashboard/dashboard.container.tsx"],"names":["Page2"],"mappings":"kIAAA,2BAMeA,UAJS,WACtB,OAAO","file":"static/js/6.92584c8e.chunk.js","sourcesContent":["import React from \"react\";\n\nconst Page2: React.FC = () => {\n  return <div>Page2</div>;\n};\n\nexport default Page2;\n"],"sourceRoot":""}

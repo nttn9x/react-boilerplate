@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/private/fields/fields.container.tsx"],"names":["Page2"],"mappings":"oGAAA,2BAMeA,UAJS,WACtB,OAAO","file":"static/js/6.fed06b10.chunk.js","sourcesContent":["import React from \"react\";\n\nconst Page2: React.FC = () => {\n  return <div>fields</div>;\n};\n\nexport default Page2;\n"],"sourceRoot":""}
