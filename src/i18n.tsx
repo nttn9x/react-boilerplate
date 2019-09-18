@@ -7,7 +7,7 @@ i18n
     resources: {
       en: {
         common: {
-          app_name: "Jaibu",
+          app_name: "Jaipu",
           lets_go: "Let's Go",
           sign_in: "SIGN IN",
           sign_out: "Sign out",
